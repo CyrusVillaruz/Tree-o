@@ -8,3 +8,8 @@
   font-family: sans-serif;
   text-align: center;
 }
+
+body {
+  background-image: url("https://static.planetminecraft.com/files/image/minecraft/texture-pack/2020/422/13738812-dirt_l.webp");
+  background-repeat: repeat;
+}
