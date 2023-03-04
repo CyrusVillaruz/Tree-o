@@ -10,9 +10,16 @@
 }
 
 body {
-  background-image: url("https://static.planetminecraft.com/files/image/minecraft/texture-pack/2020/422/13738812-dirt_l.webp");
+  /* display: grid;
+  grid-template-areas:
+  "sky"
+  "grass"
+  "dirt"; */
+  grid-template-columns: 1fr, 1fr, 20fr;
+  background-image: url("mcbackground.png");
   background-repeat: repeat;
 }
+
 
 @media (min-width: 1200px) {
   html {
