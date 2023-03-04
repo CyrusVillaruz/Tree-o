@@ -1,13 +1,20 @@
-import React from 'react';
-import BinaryTree from './BinaryTree';
+import React, { useState } from "react";
+import BinaryTree from "./components/BinaryTree";
+import TextBox from "./components/TextBox";
+import "./styles.css";
 
-const App = () => {
+function App() {
+  const [nodes, setNodes] = useState([]);
+  const handleInsert = (value) => {
+    setNodes([...nodes, value]);
+  };
+
   return (
-    <div>
-      <BinaryTree
-      />
+    <div className="App">
+      <TextBox onInsert={handleInsert} />
+      <BinaryTree nodes={nodes} />
     </div>
   );
-};
+}
 
 export default App;
