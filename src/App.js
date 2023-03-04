@@ -4,7 +4,8 @@ import BinaryTree from './BinaryTree';
 const App = () => {
   return (
     <div>
-      <BinaryTree />
+      <BinaryTree
+      />
     </div>
   );
 };
