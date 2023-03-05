@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import BinaryTree from "./components/BinaryTree";
 import TextBox from "./components/TextBox";
+import saplingImage from "./img/sapling.png";
 import "./styles.css";
 
 function App() {
@@ -11,8 +12,8 @@ function App() {
 
   return (
     <div className="App">
-      {/* <img src="https://dummyimage.com/600x200/000/fff"></img> */}
-      {/* <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/> */}
+      <img src={saplingImage} alt="sapling" style={{ display: "none" }} /> {/* import sapling image */}
+      <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
       <TextBox onInsert={handleInsert} />
       <BinaryTree nodes={nodes} />
     </div>
