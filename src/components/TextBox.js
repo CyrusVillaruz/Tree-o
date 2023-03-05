@@ -1,16 +1,16 @@
 import React, { useRef, useState } from "react";
 
 function TextBox({ onInsert }) {
-  var temp = 5000;
-  const [value, setValue] = useState(temp);
+  const [value, setValue] = useState(null);
+  const [buttonClicked, setButtonClicked] = useState(false); // new state
   const treeStates = {
-    state0: 'img/sapling.png',
-    state1: 'img/tree0.png',
-    state2: 'img/tree1.png',
-    state3: 'img/tree2.png',
-    state4: 'img/tree3.png',
-    state5: 'img/tree4.png',
-    state6: 'img/tree5.png',
+    state0: "img/sapling.png",
+    state1: "img/tree0.png",
+    state2: "img/tree1.png",
+    state3: "img/tree2.png",
+    state4: "img/tree3.png",
+    state5: "img/tree4.png",
+    state6: "img/tree5.png"
   };
 
   const handleInsert = () => {
@@ -18,14 +18,18 @@ function TextBox({ onInsert }) {
     const perfectSquare = rand * rand;
     setValue(perfectSquare);
     onInsert(perfectSquare);
-    const button = document.querySelector('#seedButton');
-    button.innerText = "Grow the tree!";
+    setButtonClicked(true); // set buttonClicked to true when button is clicked
   };
 
   return (
-      <div>
-        <button id='seedButton'onClick={handleInsert}>Plant the seed!</button>
-      </div>
+    <div>
+      <button id="seedButton" onClick={handleInsert}>
+        {value ? "Grow the tree!" : "Plant the seed!"}
+      </button>
+      {buttonClicked && !value && (
+        <img src={treeStates.state0} alt="sapling" />
+      )}
+    </div>
   );
 }
 

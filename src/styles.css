@@ -10,11 +10,6 @@
 }
 
 body {
-  /* display: grid;
-  grid-template-areas:
-  "sky"
-  "grass"
-  "dirt"; */
   grid-template-columns: 1fr, 1fr, 20fr;
   background-image: url("mcbackground.png");
   background-repeat: repeat;
@@ -23,6 +18,6 @@ body {
 
 @media (min-width: 1200px) {
   html {
-    zoom: 0.8; /* Adjust the zoom level as needed */
+    zoom: 0.8;
   }
 }
