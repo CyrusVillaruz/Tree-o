@@ -11,6 +11,8 @@ function App() {
 
   return (
     <div className="App">
+      {/* <img src="https://dummyimage.com/600x200/000/fff"></img> */}
+      <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
       <TextBox onInsert={handleInsert} />
       <BinaryTree nodes={nodes} />
     </div>
