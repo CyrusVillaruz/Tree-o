@@ -3,15 +3,24 @@ import React, { useRef, useState } from "react";
 function TextBox({ onInsert }) {
   var temp = 5000;
   const [value, setValue] = useState(temp);
+  const treeStates = {
+    state0: 'img/sapling.png',
+    state1: 'img/tree0.png',
+    state2: 'img/tree1.png',
+    state3: 'img/tree2.png',
+    state4: 'img/tree3.png',
+    state5: 'img/tree4.png',
+    state6: 'img/tree5.png',
+  };
 
   const handleInsert = () => {
-    setValue((Math.ceil(Math.random(0, 10000) * 10000)));
-    onInsert(value);
+    const rand = Math.floor(Math.random() * 256) + 1;
+    const perfectSquare = rand * rand;
+    setValue(perfectSquare);
+    onInsert(perfectSquare);
     const button = document.querySelector('#seedButton');
     button.innerText = "Grow the tree!";
   };
-
-  const inputRef = useRef(null);
 
   return (
       <div>
