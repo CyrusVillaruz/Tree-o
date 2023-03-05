@@ -10,13 +10,12 @@
 }
 
 body {
-  grid-template-columns: 1fr, 1fr, 20fr;
   background-image: url("mcbackground.png");
   background-repeat: repeat;
 
 }
 img{
-    width: 315px;
+    width: 330px;
     height: 275px;
   margin: 0 auto;
 }
