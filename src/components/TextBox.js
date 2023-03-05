@@ -1,8 +1,8 @@
 import React, { useRef, useState } from "react";
 
 function TextBox({ onInsert }) {
-  var temp = 5000;
-  const [value, setValue] = useState(temp);
+  const [clicks, setClicks] = useState(0);
+
   const treeStates = {
     state0: 'img/sapling.png',
     state1: 'img/tree0.png',
@@ -13,10 +13,28 @@ function TextBox({ onInsert }) {
     state6: 'img/tree5.png',
   };
 
+  const getImageSource = () => {
+    if (clicks >= 5 && clicks < 10) {
+      return treeStates.state1;
+    } else if (clicks >= 10 && clicks < 15) {
+      return treeStates.state2;
+    } else if (clicks >= 15 && clicks < 20) {
+      return treeStates.state3;
+    } else if (clicks >= 20 && clicks < 25) {
+      return treeStates.state4;
+    } else if (clicks >= 25 && clicks < 30) {
+      return treeStates.state5;
+    } else if (clicks >= 30) {
+      return treeStates.state6;
+    } else {
+      return treeStates.state0;
+    }
+  };
+
   const handleInsert = () => {
     const rand = Math.floor(Math.random() * 256) + 1;
     const perfectSquare = rand * rand;
-    setValue(perfectSquare);
+    setClicks(clicks + 1);
     onInsert(perfectSquare);
     const button = document.querySelector('#seedButton');
     button.innerText = "Grow the tree!";
@@ -24,7 +42,8 @@ function TextBox({ onInsert }) {
 
   return (
       <div>
-        <button id='seedButton'onClick={handleInsert}>Plant the seed!</button>
+        <button id='seedButton' onClick={handleInsert}>Plant the seed!</button>
+        <img src={getImageSource()} alt="Tree" />
       </div>
   );
 }
